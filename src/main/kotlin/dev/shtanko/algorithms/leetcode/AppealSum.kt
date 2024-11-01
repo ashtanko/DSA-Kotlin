@@ -27,22 +27,6 @@ package dev.shtanko.algorithms.leetcode
 import dev.shtanko.algorithms.ALPHABET_LETTERS_COUNT
 
 /**
- * 2262. Total Appeal of A String
- * @see <a href="https://leetcode.com/problems/total-appeal-of-a-string">
- *     Source</a>
- * Functional interface representing an appeal sum operation on a String.
- */
-fun interface AppealSum {
-    /**
-     * Performs an appeal sum operation on the given String.
-     *
-     * @param str The input String to perform the appeal sum on.
-     * @return The result of the appeal sum operation.
-     */
-    operator fun invoke(str: String): Long
-}
-
-/**
  * # Intuition
  * The problem is to calculate the sum of the appeal of all substrings of a
  * given string. The appeal of a string is defined as the number of distinct
@@ -77,4 +61,20 @@ val appealSumDp = AppealSum { str: String ->
         prev[char - 'a'] = index.toLong() + 1
         cur
     }.sum()
+}
+
+/**
+ * 2262. Total Appeal of A String
+ * @see <a href="https://leetcode.com/problems/total-appeal-of-a-string">
+ *     Source</a>
+ * Functional interface representing an appeal sum operation on a String.
+ */
+fun interface AppealSum {
+    /**
+     * Performs an appeal sum operation on the given String.
+     *
+     * @param str The input String to perform the appeal sum on.
+     * @return The result of the appeal sum operation.
+     */
+    operator fun invoke(str: String): Long
 }

@@ -28,23 +28,6 @@ import kotlin.math.max
 import kotlin.math.min
 
 /**
- * 583. Delete Operation for Two Strings
- * @see <a href="https://leetcode.com/problems/delete-operation-for-two-strings">Source</a>
- */
-fun interface MinDistance {
-    /**
-     * Calculates the minimum number of operations required to convert the
-     * source word
-     * into the target word.
-     *
-     * @param sourceWord The original string to be converted.
-     * @param targetWord The target string to convert to.
-     * @return The minimum number of operations required for the conversion.
-     */
-    operator fun invoke(sourceWord: String, targetWord: String): Int
-}
-
-/**
  * # Approach #1 Using Longest Common Subsequence
  *
  * # Intuition
@@ -384,4 +367,21 @@ val minDistance1Ddp = MinDistance { sourceWord: String, targetWord: String ->
         dp = temp
     }
     dp[targetWord.length]
+}
+
+/**
+ * 583. Delete Operation for Two Strings
+ * @see <a href="https://leetcode.com/problems/delete-operation-for-two-strings">Source</a>
+ */
+fun interface MinDistance {
+    /**
+     * Calculates the minimum number of operations required to convert the
+     * source word
+     * into the target word.
+     *
+     * @param sourceWord The original string to be converted.
+     * @param targetWord The target string to convert to.
+     * @return The minimum number of operations required for the conversion.
+     */
+    operator fun invoke(sourceWord: String, targetWord: String): Int
 }

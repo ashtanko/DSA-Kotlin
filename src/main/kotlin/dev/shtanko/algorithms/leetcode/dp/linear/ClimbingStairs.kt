@@ -24,20 +24,6 @@
 
 package dev.shtanko.algorithms.leetcode.dp.linear
 
-/**
- * 70. Climbing Stairs
- * @see <a href="https://leetcode.com/problems/climbing-stairs/">Source</a>
- */
-fun interface ClimbingStairs {
-    /**
-     * Calculates the number of ways to climb the given number of stairs.
-     *
-     * @param num The number of stairs to climb.
-     * @return The number of ways to climb the given number of stairs.
-     */
-    operator fun invoke(num: Int): Int
-}
-
 val climbingStairsBottomUpDp = ClimbingStairs { num ->
     if (num == 1) {
         return@ClimbingStairs 1
@@ -51,4 +37,18 @@ val climbingStairsBottomUpDp = ClimbingStairs { num ->
         oneBefore = total
     }
     return@ClimbingStairs total
+}
+
+/**
+ * 70. Climbing Stairs
+ * @see <a href="https://leetcode.com/problems/climbing-stairs/">Source</a>
+ */
+fun interface ClimbingStairs {
+    /**
+     * Calculates the number of ways to climb the given number of stairs.
+     *
+     * @param num The number of stairs to climb.
+     * @return The number of ways to climb the given number of stairs.
+     */
+    operator fun invoke(num: Int): Int
 }

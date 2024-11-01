@@ -29,20 +29,6 @@ import dev.shtanko.algorithms.SI_FORMAT
 import java.util.Locale
 
 /**
- * Functional interface for formatting byte values.
- */
-fun interface ByteFormatter {
-    /**
-     * Formats the given bytes using the specified current unit.
-     *
-     * @param bytes the number of bytes to be formatted.
-     * @param current the unit of the current byte value (e.g., 'B' for bytes, 'iB' for binary bytes).
-     * @return a formatted string representing the byte value.
-     */
-    operator fun invoke(bytes: Double, current: Char): String
-}
-
-/**
  * Implementation of ByteFormatter for formatting byte values in binary format.
  */
 val binByteFormatter = ByteFormatter { bytes, current ->
@@ -54,4 +40,18 @@ val binByteFormatter = ByteFormatter { bytes, current ->
  */
 val siByteFormatter = ByteFormatter { bytes, current ->
     String.format(Locale.getDefault(), SI_FORMAT, bytes, current)
+}
+
+/**
+ * Functional interface for formatting byte values.
+ */
+fun interface ByteFormatter {
+    /**
+     * Formats the given bytes using the specified current unit.
+     *
+     * @param bytes the number of bytes to be formatted.
+     * @param current the unit of the current byte value (e.g., 'B' for bytes, 'iB' for binary bytes).
+     * @return a formatted string representing the byte value.
+     */
+    operator fun invoke(bytes: Double, current: Char): String
 }

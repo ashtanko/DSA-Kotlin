@@ -27,78 +27,6 @@ package dev.shtanko.algorithms.leetcode
 import kotlin.math.abs
 
 /**
- * 494. Target Sum
- * @link https://leetcode.com/problems/target-sum/
- */
-fun interface TargetSum {
-    /**
-     * Calculates the number of ways to achieve the target sum.
-     *
-     * @param nums The array of integers.
-     * @param target The target sum to achieve.
-     * @return The number of ways to assign `+` or `-` signs to each element
-     * in the array
-     * such that the resulting sum equals the target.
-     */
-    operator fun invoke(nums: IntArray, target: Int): Int
-}
-
-/**
- * # Approach 1: Brute Force
- *
- * # Intuition
- * The problem requires finding the number of ways to assign `+` or `-` signs
- * to each element in the array such that the resulting sum equals the target.
- * The brute force approach explores all possible combinations.
- *
- * # Approach
- * The approach involves a recursive function that tries both adding and
- * subtracting each number in the array:
- * 1. Start from the first element and recursively try both adding and
- * subtracting the current number to/from the sum.
- * 2. Move to the next element and repeat the process.
- * 3. If the end of the array is reached and the sum equals the target,
- * increment the count.
- * 4. The base case is when the index reaches the end of the array. If the sum
- * at this point equals the target, increment the count.
- *
- * # Complexity
- * - Time complexity: O(2^n)
- *   - Each element in the array has two possibilities (add or subtract),
- *   resulting in 2^n possible combinations.
- *
- * - Space complexity: O(n)
- *   - The maximum depth of the recursion stack is n.
- */
-class TargetSumBruteForce : TargetSum {
-    private var count = 0
-
-    override fun invoke(
-        nums: IntArray,
-        target: Int,
-    ): Int {
-        calculate(nums, 0, 0, target)
-        return count
-    }
-
-    private fun calculate(
-        nums: IntArray,
-        i: Int,
-        sum: Int,
-        target: Int,
-    ) {
-        if (i == nums.size) {
-            if (sum == target) {
-                count++
-            }
-        } else {
-            calculate(nums, i + 1, sum + nums[i], target)
-            calculate(nums, i + 1, sum - nums[i], target)
-        }
-    }
-}
-
-/**
  * # Approach 2: Recursion with Memoization
  *
  * # Intuition
@@ -129,7 +57,7 @@ class TargetSumBruteForce : TargetSum {
  *   - The space complexity is due to the memoization array which stores the
  *   results of sub-problems.
  */
-val targetSumMemoization = TargetSum { nums: IntArray, target: Int ->
+internal val targetSumMemoization = TargetSum { nums: IntArray, target: Int ->
     var total = 0
 
     /**
@@ -279,4 +207,76 @@ internal val onePassSolution = TargetSum { nums: IntArray, target: Int ->
     }
 
     if (abs(target) > total) 0 else dp[target + total]
+}
+
+/**
+ * 494. Target Sum
+ * @link https://leetcode.com/problems/target-sum/
+ */
+fun interface TargetSum {
+    /**
+     * Calculates the number of ways to achieve the target sum.
+     *
+     * @param nums The array of integers.
+     * @param target The target sum to achieve.
+     * @return The number of ways to assign `+` or `-` signs to each element
+     * in the array
+     * such that the resulting sum equals the target.
+     */
+    operator fun invoke(nums: IntArray, target: Int): Int
+}
+
+/**
+ * # Approach 1: Brute Force
+ *
+ * # Intuition
+ * The problem requires finding the number of ways to assign `+` or `-` signs
+ * to each element in the array such that the resulting sum equals the target.
+ * The brute force approach explores all possible combinations.
+ *
+ * # Approach
+ * The approach involves a recursive function that tries both adding and
+ * subtracting each number in the array:
+ * 1. Start from the first element and recursively try both adding and
+ * subtracting the current number to/from the sum.
+ * 2. Move to the next element and repeat the process.
+ * 3. If the end of the array is reached and the sum equals the target,
+ * increment the count.
+ * 4. The base case is when the index reaches the end of the array. If the sum
+ * at this point equals the target, increment the count.
+ *
+ * # Complexity
+ * - Time complexity: O(2^n)
+ *   - Each element in the array has two possibilities (add or subtract),
+ *   resulting in 2^n possible combinations.
+ *
+ * - Space complexity: O(n)
+ *   - The maximum depth of the recursion stack is n.
+ */
+class TargetSumBruteForce : TargetSum {
+    private var count = 0
+
+    override fun invoke(
+        nums: IntArray,
+        target: Int,
+    ): Int {
+        calculate(nums, 0, 0, target)
+        return count
+    }
+
+    private fun calculate(
+        nums: IntArray,
+        i: Int,
+        sum: Int,
+        target: Int,
+    ) {
+        if (i == nums.size) {
+            if (sum == target) {
+                count++
+            }
+        } else {
+            calculate(nums, i + 1, sum + nums[i], target)
+            calculate(nums, i + 1, sum - nums[i], target)
+        }
+    }
 }

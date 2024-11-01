@@ -25,24 +25,6 @@
 package dev.shtanko.algorithms.leetcode
 
 /**
- * 1. Two Sum
- * @link https://leetcode.com/problems/two-sum/
- */
-fun interface TwoSum {
-    /**
-     * Performs the two-sum operation on the given array of integers.
-     *
-     * @param nums the array of integers.
-     * @param target the target sum.
-     * @return an array of indices representing the two numbers that add up to the target sum.
-     */
-    operator fun invoke(
-        nums: IntArray,
-        target: Int,
-    ): IntArray
-}
-
-/**
  * # Approach 1: Brute Force
  *
  * # Intuition
@@ -189,4 +171,22 @@ val twoSumOneHashMap = TwoSum { nums: IntArray, target: Int ->
         map[target - i] = index
     }
     return@TwoSum intArrayOf()
+}
+
+/**
+ * 1. Two Sum
+ * @link https://leetcode.com/problems/two-sum/
+ */
+fun interface TwoSum {
+    /**
+     * Performs the two-sum operation on the given array of integers.
+     *
+     * @param nums the array of integers.
+     * @param target the target sum.
+     * @return an array of indices representing the two numbers that add up to the target sum.
+     */
+    operator fun invoke(
+        nums: IntArray,
+        target: Int,
+    ): IntArray
 }
