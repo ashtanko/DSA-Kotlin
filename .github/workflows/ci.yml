@@ -52,7 +52,10 @@ jobs:
             -${{ hashFiles('**/buildSrc/**') }}
 
       - name: Run checks and test
-        run: ./gradlew detekt ktlintCheck diktatCheck --build-cache --no-daemon --stacktrace --gradle-user-home "$GRADLE_HOME"
+        run: ./gradlew detekt ktlintCheck diktatCheck jacocoTestReport --build-cache --no-daemon --stacktrace --gradle-user-home "$GRADLE_HOME"
+
+      - name: Run jacocoTestReport
+        run: ./gradlew jacocoTestReport
 
       - name: Build with Gradle and test
         run: ./gradlew build -x koverVerify  # Skipping koverVerify to avoid failure if coverage has lowered
