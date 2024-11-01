@@ -34,13 +34,13 @@ class DoubleXTest {
     @ParameterizedTest(name = "For example, value {0} is even.")
     @ValueSource(doubles = [2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 14.0, 16.0, 18.0, 20.0, 100.0])
     fun `is even test`(value: Double) {
-        assertThat(value.isEven).isTrue
+        assertThat(value.isEven()).isTrue
     }
 
     @DisplayName("Test only odd numbers")
     @ParameterizedTest(name = "For example, value {0} is not even.")
     @ValueSource(doubles = [1.0, 11.0, 21.0, 31.0, 41.0, 51.0, 61.0, 71.0, 81.0, 91.0, 3.0, 13.0])
     fun `is odd test`(value: Double) {
-        assertThat(value.isEven).isFalse
+        assertThat(value.isEven()).isFalse
     }
 }

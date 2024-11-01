@@ -47,7 +47,7 @@ class IntXTest {
     @ParameterizedTest
     @ArgumentsSource(InputIsEvenArgumentsProvider::class)
     fun `is even test`(n: Int, expected: Boolean) {
-        val actual = n.isEven
+        val actual = n.isEven()
         assertThat(actual).isEqualTo(expected)
     }
 

@@ -55,7 +55,7 @@ fun sqrt(
     }
     var approximation = number
     while (abs(approximation - number / approximation) > tolerance * approximation) {
-        approximation = (number / approximation + approximation) / 2.0
+        approximation = (number / approximation + approximation) / 2
     }
     return approximation
 }

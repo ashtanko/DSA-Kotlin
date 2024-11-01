@@ -64,6 +64,7 @@ data object HeapSort : Sortable {
      * @param index The index of the current element in the heap.
      * @param T The type of elements in the array, must be comparable.
      */
+    @Suppress("SAY_NO_TO_VAR")
     private fun <T : Comparable<T>> heapify(
         array: Array<T>,
         size: Int,

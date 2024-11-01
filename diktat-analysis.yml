@@ -393,10 +393,10 @@
 # robustness and readability of code, because `var` variables can be reassigned several times in the business logic.
 # This rule prohibits usage of `var`s as local variables - the only exception is accumulators and counters
 - name: SAY_NO_TO_VAR
-  enabled: false # todo temporary disabled
+  enabled: true
 # Inspection that checks if string template has redundant quotes
 - name: STRING_TEMPLATE_QUOTES
-  enabled: false # todo temporary disabled
+  enabled: true
 # Check if there are redundant nested if-statements, which could be collapsed into a single one by concatenating their conditions
 - name: COLLAPSE_IF_STATEMENTS
   enabled: true
@@ -404,7 +404,7 @@
     startCollapseFromNestedLevel: 2
 # Checks that floating-point values are not used in arithmetic expressions
 - name: FLOAT_IN_ACCURATE_CALCULATIONS
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that function length isn't too long
 - name: TOO_LONG_FUNCTION
   enabled: true
@@ -484,7 +484,7 @@
 # Developer expects to get the value of the property, but receives some unknown value and some extra side effect hidden by the custom getter/setter.
 # Use extra functions for it instead.
 - name: CUSTOM_GETTERS_SETTERS
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks if null-check was used explicitly (for example: if (a == null))
 # Try to avoid explicit null checks (explicit comparison with `null`)
 # Kotlin is declared as [Null-safe](https://kotlinlang.org/docs/reference/null-safety.html) language.
@@ -537,7 +537,7 @@
     isRangeToIgnore: false
 # Check if there is a call of print()\println() or console.log(). Assumption that it's a debug print
 - name: DEBUG_PRINT
-  enabled: false # todo temporary disabled
+  enabled: true
 # Check that typealias name is in PascalCase
 - name: TYPEALIAS_NAME_INCORRECT_CASE
   enabled: true

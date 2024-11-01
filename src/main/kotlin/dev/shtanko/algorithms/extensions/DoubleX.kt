@@ -24,12 +24,9 @@
 
 package dev.shtanko.algorithms.extensions
 
-private const val EVEN_DIVISOR = 2.0
-
 /**
  * Checks if a Double value is even.
  *
  * @return `true` if the Double value is even, `false` otherwise.
  */
-val Double.isEven: Boolean
-    get() = this % EVEN_DIVISOR == 0.0
+fun Double.isEven(): Boolean = (this % 2).toInt() == 0

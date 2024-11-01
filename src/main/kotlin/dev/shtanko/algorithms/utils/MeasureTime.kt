@@ -51,6 +51,7 @@ fun measureTime(
  * @param array The array associated with the task.
  * @param task The task to measure the execution time of.
  */
+@Suppress("DEBUG_PRINT")
 fun measureTime(
     strategy: Sortable,
     array: IntArray,
@@ -74,6 +75,7 @@ fun measureTime(
  * @param taskName The name of the task.
  * @param task The task to measure the execution time of.
  */
+@Suppress("DEBUG_PRINT")
 fun measureTime(
     taskName: String,
     task: () -> Unit,

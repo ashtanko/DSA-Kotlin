@@ -40,8 +40,7 @@ val isEven = IntPredicate { it % EVEN_DIVISOR == 0 }
  *
  * @return `true` if the Int value is even, `false` otherwise.
  */
-val Int.isEven: Boolean
-    get() = this % EVEN_DIVISOR == 0
+fun Int.isEven(): Boolean = this % EVEN_DIVISOR == 0
 
 /**
  * Generates an IntArray of the specified size with random values.
