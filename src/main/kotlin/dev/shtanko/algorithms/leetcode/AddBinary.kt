@@ -31,6 +31,13 @@ import java.math.BigInteger
  * @see <a href="https://leetcode.com/problems/add-binary">Source</a>
  */
 fun interface AddBinary {
+    /**
+     * Adds two binary strings and returns their sum as a binary string.
+     *
+     * @param left The first binary string.
+     * @param right The second binary string.
+     * @return The sum of the two binary strings as a binary string.
+     */
     operator fun invoke(left: String, right: String): String
 }
 

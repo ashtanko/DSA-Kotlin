@@ -29,6 +29,12 @@ package dev.shtanko.algorithms.leetcode.dp.linear
  * @see <a href="https://leetcode.com/problems/climbing-stairs/">Source</a>
  */
 fun interface ClimbingStairs {
+    /**
+     * Calculates the number of ways to climb the given number of stairs.
+     *
+     * @param num The number of stairs to climb.
+     * @return The number of ways to climb the given number of stairs.
+     */
     operator fun invoke(num: Int): Int
 }
 

@@ -50,7 +50,7 @@ data object BottomUpMergeSort : Sortable {
                 i += 2 * width
             }
             // Copy the merged array back to the original array
-            System.arraycopy(tempArray, 0, arr, 0, size)
+            tempArray.copyInto(arr)
             width *= 2
         }
     }

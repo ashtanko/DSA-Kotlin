@@ -32,6 +32,15 @@ import kotlin.math.min
  * @see <a href="https://leetcode.com/problems/delete-operation-for-two-strings">Source</a>
  */
 fun interface MinDistance {
+    /**
+     * Calculates the minimum number of operations required to convert the
+     * source word
+     * into the target word.
+     *
+     * @param sourceWord The original string to be converted.
+     * @param targetWord The target string to convert to.
+     * @return The minimum number of operations required for the conversion.
+     */
     operator fun invoke(sourceWord: String, targetWord: String): Int
 }
 
@@ -73,6 +82,16 @@ fun interface MinDistance {
  */
 val minDistanceLcs = MinDistance { firstWord: String, targetWord: String ->
 
+    /**
+     * Calculates the length of the longest common subsequence (LCS) between
+     * two strings.
+     *
+     * @param firstWord The first string.
+     * @param secondWord The second string.
+     * @param firstWordLen The length of the first string.
+     * @param secondWordLen The length of the second string.
+     * @return The length of the LCS.
+     */
     fun calculateLcsLength(
         firstWord: String,
         secondWord: String,
@@ -139,6 +158,18 @@ val minDistanceLcs = MinDistance { firstWord: String, targetWord: String ->
  * stores the LCS lengths for all sub-problems.
  */
 val minDistanceLcsMemo = MinDistance { sourceWord: String, targetWord: String ->
+
+    /**
+     * Calculates the length of the longest common subsequence (LCS) between
+     * two strings using memoization.
+     *
+     * @param sourceWord The first string.
+     * @param targetWord The second string.
+     * @param length1 The length of the first string.
+     * @param length2 The length of the second string.
+     * @param memo The memoization array.
+     * @return The length of the LCS.
+     */
     fun longestCommonSubsequenceLength(
         sourceWord: String,
         targetWord: String,

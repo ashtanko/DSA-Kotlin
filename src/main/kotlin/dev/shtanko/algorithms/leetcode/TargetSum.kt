@@ -31,6 +31,15 @@ import kotlin.math.abs
  * @link https://leetcode.com/problems/target-sum/
  */
 fun interface TargetSum {
+    /**
+     * Calculates the number of ways to achieve the target sum.
+     *
+     * @param nums The array of integers.
+     * @param target The target sum to achieve.
+     * @return The number of ways to assign `+` or `-` signs to each element
+     * in the array
+     * such that the resulting sum equals the target.
+     */
     operator fun invoke(nums: IntArray, target: Int): Int
 }
 
@@ -123,6 +132,18 @@ class TargetSumBruteForce : TargetSum {
 val targetSumMemoization = TargetSum { nums: IntArray, target: Int ->
     var total = 0
 
+    /**
+     * Recursive function to calculate the number of ways to achieve the target
+     * sum.
+     *
+     * @param nums The array of integers.
+     * @param i The current index in the array.
+     * @param sum The current sum.
+     * @param target The target sum to achieve.
+     * @param memo The memoization array to store intermediate results.
+     * @return The number of ways to achieve the target sum from the current
+     * state.
+     */
     fun calculate(
         nums: IntArray,
         i: Int,

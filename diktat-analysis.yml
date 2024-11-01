@@ -78,7 +78,7 @@
   enabled: true
 # Checks that functions have kdoc
 - name: MISSING_KDOC_ON_FUNCTION
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that on file level internal or public class or function has missing KDoc
 - name: MISSING_KDOC_TOP_LEVEL
   enabled: false # todo temporary disabled

@@ -1,11 +1,11 @@
 [versions]
 coroutines = "1.9.0"       # https://github.com/Kotlin/kotlinx.coroutines
-junit = "5.11.2"           # https://junit.org/junit5 | https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter
+junit = "5.11.3"           # https://junit.org/junit5 | https://central.sonatype.com/artifact/org.junit.jupiter/junit-jupiter
 kotlin = "2.0.21"          # https://github.com/JetBrains/kotlin
 mockk = "1.13.13"          # https://mockk.io
 detekt = "1.23.7"          # https://github.com/detekt/detekt
 dokka = "1.9.20"           # https://github.com/Kotlin/dokka
-spotless = "7.0.0.BETA2"   # https://github.com/diffplug/spotless
+spotless = "7.0.0.BETA4"   # https://github.com/diffplug/spotless
 dependency = "1.32.0"      # https://github.com/autonomousapps/dependency-analysis-gradle-plugin
 pitest = "1.15.0"          # https://plugins.gradle.org/plugin/info.solidsoft.pitest
 pinterestKtlint = "0.49.0" # https://github.com/pinterest/ktlint
