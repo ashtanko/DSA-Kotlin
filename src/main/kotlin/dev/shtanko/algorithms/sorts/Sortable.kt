@@ -29,10 +29,9 @@ package dev.shtanko.algorithms.sorts
  */
 sealed interface Sortable {
     /**
-     * Performs the sorting operation on the given array.
+     * Invokes the sorting strategy on the given array.
      *
-     * @param arr The array to sort.
-     * @param T The type of elements in the array, must be comparable.
+     * @param arr The array to be sorted.
      */
     operator fun <T : Comparable<T>> invoke(arr: Array<T>)
 }

@@ -44,8 +44,8 @@ fun Pair<Int, Int>.gcd(): Int {
 /**
  * Calculates the greatest common divisor (GCD) of two integers.
  *
- * @param a The first integer.
- * @param b The second integer.
+ * @param number1 The first integer.
+ * @param number2 The second integer.
  * @return The greatest common divisor of the two integers.
  */
 fun gcd(

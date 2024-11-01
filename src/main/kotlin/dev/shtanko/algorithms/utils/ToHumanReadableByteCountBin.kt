@@ -31,13 +31,18 @@ import java.text.StringCharacterIterator
 import java.util.Locale
 import kotlin.math.abs
 
+// Bit mask used to determine the maximum value for byte conversion
 private const val BIT_MASK = 0xf_ffc_ccc_ccc_ccc_ccL
 private const val MAX_LOOP_INDEX = 40
 private const val UNITS = "KMGTPE"
 
 /**
- * Converts a long value to a human-readable byte count representation using binary prefixes.
+ * Converts a long value to a human-readable byte count representation using
+ * binary prefixes.
  *
+ * @param formatter The formatter to use for converting the byte count to a
+ * string representation.
+ *                  Defaults to `siByteFormatter`.
  * @return The human-readable byte count representation.
  */
 fun Long.toHumanReadableByteCountBin(formatter: ByteFormatter = siByteFormatter): String {

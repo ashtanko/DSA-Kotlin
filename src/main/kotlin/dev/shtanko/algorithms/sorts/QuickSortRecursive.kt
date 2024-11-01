@@ -52,10 +52,10 @@ data object QuickSortRecursive : Sortable {
 }
 
 /**
- * Extension function that performs the quick sort operation on a list.
+ * Extension function to perform quick sort on a list of comparable elements.
  *
- * @return A new list with elements sorted in ascending order.
- * @param T The type of elements in the list, must be comparable.
+ * @receiver List<T> The list to be sorted.
+ * @return List<T> A new list containing the sorted elements.
  */
 fun <T : Comparable<T>> List<T>.quickSort(): List<T> =
     when {

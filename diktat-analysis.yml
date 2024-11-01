@@ -81,13 +81,13 @@
   enabled: true
 # Checks that on file level internal or public class or function has missing KDoc
 - name: MISSING_KDOC_TOP_LEVEL
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that accessible internal elements (protected, public, internal) in a class are documented
 - name: MISSING_KDOC_CLASS_ELEMENTS
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that accessible method parameters are documented in KDoc
 - name: KDOC_WITHOUT_PARAM_TAG
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that accessible method explicit return type is documented in KDoc
 - name: KDOC_WITHOUT_RETURN_TAG
   enabled: true
