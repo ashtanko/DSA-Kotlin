@@ -50,7 +50,8 @@ enum class Fibonacci {
         } else {
             this(index - 1) + this(index - 2)
         }
-    };
+    },
+    ;
 
     /**
      * Calculates the Fibonacci number at the given index using the specified strategy.

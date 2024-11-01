@@ -304,7 +304,7 @@
   enabled: true
 # Checks that enum structure is correct: enum entries should be separated by comma and line break and last entry should have semicolon in the end.
 - name: ENUMS_SEPARATED
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that value on integer or float constant is not too big
 - name: LONG_NUMERICAL_VALUES_SEPARATED
   enabled: true
