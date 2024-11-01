@@ -93,7 +93,7 @@
   enabled: true
 # Checks that accessible method throw keyword is documented in KDoc
 - name: KDOC_WITHOUT_THROWS_TAG
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that KDoc is not empty
 - name: KDOC_EMPTY_KDOC
   enabled: false # todo temporary disabled
