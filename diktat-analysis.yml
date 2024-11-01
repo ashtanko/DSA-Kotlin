@@ -193,7 +193,7 @@
   enabled: true
 # Checks top level order
 - name: TOP_LEVEL_ORDER
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that non-empty code blocks with braces follow the K&R style (1TBS or OTBS style)
 - name: BRACES_BLOCK_STRUCTURE_ERROR
   enabled: true
