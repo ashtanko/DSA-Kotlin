@@ -46,13 +46,6 @@ fun interface ByteFormatter {
  * Implementation of ByteFormatter for formatting byte values in binary format.
  */
 val binByteFormatter = ByteFormatter { bytes, current ->
-    /**
-     * Formats the given bytes in binary format using the specified current unit.
-     *
-     * @param bytes the number of bytes to be formatted.
-     * @param current the unit of the current byte value (e.g., 'B' for bytes, 'iB' for binary bytes).
-     * @return a formatted string representing the byte value in binary format.
-     */
     String.format(Locale.getDefault(), BIN_FORMAT, bytes, current)
 }
 
@@ -60,12 +53,5 @@ val binByteFormatter = ByteFormatter { bytes, current ->
  * Implementation of ByteFormatter for formatting byte values in SI format.
  */
 val siByteFormatter = ByteFormatter { bytes, current ->
-    /**
-     * Formats the given bytes in SI format using the specified current unit.
-     *
-     * @param bytes the number of bytes to be formatted.
-     * @param current the unit of the current byte value (e.g., 'B' for bytes, 'iB' for binary bytes).
-     * @return a formatted string representing the byte value in SI format.
-     */
     String.format(Locale.getDefault(), SI_FORMAT, bytes, current)
 }

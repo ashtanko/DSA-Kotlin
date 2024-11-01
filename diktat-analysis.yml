@@ -96,42 +96,42 @@
   enabled: true
 # Checks that KDoc is not empty
 - name: KDOC_EMPTY_KDOC
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that underscore is correctly used to split package naming
 - name: INCORRECT_PACKAGE_SEPARATOR
   enabled: true
 # Checks that code block doesn't contain kdoc comments
 - name: COMMENTED_BY_KDOC
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that there is no @deprecated tag in kdoc
 - name: KDOC_NO_DEPRECATED_TAG
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that there is no empty content in kdoc tags
 - name: KDOC_NO_EMPTY_TAGS
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that there is only one space after kdoc tag
 - name: KDOC_WRONG_SPACES_AFTER_TAG
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks tags order in kDoc. `@param`, `@return`, `@throws`
 - name: KDOC_WRONG_TAGS_ORDER
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that there is no newline of empty KDoc line (with leading asterisk) between `@param`, `@return`, `@throws` tags
 - name: KDOC_NO_NEWLINES_BETWEEN_BASIC_TAGS
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that block of tags @param, @return, @throws is separated from previous part of KDoc by exactly one empty line
 - name: KDOC_NEWLINES_BEFORE_BASIC_TAGS
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that special tags `@apiNote`, `@implNote`, `@implSpec` have exactly one empty line after
 - name: KDOC_NO_NEWLINE_AFTER_SPECIAL_TAGS
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that kdoc does not contain @author tag or date
 - name: KDOC_CONTAINS_DATE_OR_AUTHOR
-  enabled: false # todo temporary disabled
+  enabled: true
   configuration:
     versionRegex: \d+\.\d+\.\d+[-.\w\d]*
 # Checks that KDoc does not contain single line with words 'return', 'get' or 'set'
 - name: KDOC_TRIVIAL_KDOC_ON_FUNCTION
-  enabled: false # todo temporary disabled
+  enabled: true
 # Checks that there is newline after header KDoc
 - name: HEADER_WRONG_FORMAT
   enabled: true

@@ -92,8 +92,8 @@ data object QuickSort : Sortable {
      * @param array The array to partition.
      * @param low The low index of the partition range.
      * @param high The high index of the partition range.
-     * @return The index of the pivot element after partitioning.
      * @param T The type of elements in the array, must be comparable.
+     * @return The index of the pivot element after partitioning.
      */
     private fun <T : Comparable<T>> partition(
         array: Array<T>,

@@ -97,8 +97,8 @@ fun <T> Array<T>.flip(
 /**
  * Returns the second element of the IntArray.
  *
- * @throws NoSuchElementException if the array is empty.
  * @return The second element of the IntArray.
+ * @throws NoSuchElementException if the array is empty.
  */
 fun IntArray.second(): Int {
     if (isEmpty()) {
