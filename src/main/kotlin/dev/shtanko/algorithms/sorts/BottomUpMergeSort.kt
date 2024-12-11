@@ -55,6 +55,17 @@ data object BottomUpMergeSort : Sortable {
         }
     }
 
+    /**
+     * Merge two sub-arrays of array[].
+     *
+     * @param array the array to be sorted
+     * @param tempArray the temporary array used for merging
+     * @param start the start index of the first sub-array
+     * @param middle the end index of the first sub-array
+     * @param end the end index of the second sub-array
+     * @param <T> the type of elements in the array
+     * @return the merged array
+     */
     private fun <T : Comparable<T>> merge(
         array: Array<T>,
         tempArray: Array<T>,
