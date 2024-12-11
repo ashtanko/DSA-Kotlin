@@ -15,7 +15,7 @@ A repository that organizes various data structures, algorithms, and solutions t
   <a href="http://kotlinlang.org/"><img alt="Kotlin Version" src="https://img.shields.io/badge/kotlin-1.9.21-blue.svg"/></a>
   <a href="https://app.codacy.com/gh/ashtanko/the-algorithms/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage"><img alt="codacy test coverage" src="https://app.codacy.com/project/badge/Coverage/3eecbb4a701d426eb5d1d2dcbb9d7679"/></a>
   <a href="https://codeclimate.com/github/ashtanko/the-algorithms/test_coverage"><img alt="codeclimate test coverage" src="https://api.codeclimate.com/v1/badges/1a2a2ecaee3023a36b87/test_coverage"/></a>
-  <a href="https://codecov.io/gh/ashtanko/the-algorithms"><img alt="codecov test coverage" src="https://codecov.io/gh/ashtanko/the-algorithms/branch/main/graph/badge.svg?token=6vzgrCAl5c"/></a>
+  <a href="https://codecov.io/gh/ashtanko/DSA-Kotlin"><img alt="codecov test coverage" src="https://codecov.io/gh/ashtanko/DSA-Kotlin/graph/badge.svg?token=6vzgrCAl5c"/></a>
   <a href="https://coveralls.io/github/ashtanko/the-algorithms?branch=main"><img alt="Coverage Status" src="https://coveralls.io/repos/github/ashtanko/the-algorithms/badge.svg?branch=main"/></a>
 </p><br>
 
