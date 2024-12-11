@@ -6,7 +6,6 @@ A repository that organizes various data structures, algorithms, and solutions t
   <a href="https://github.com/ashtanko/DSA-Kotlin/actions/workflows/ci.yml"><img alt="Build" src="https://github.com/ashtanko/DSA-Kotlin/actions/workflows/ci.yml/badge.svg"/></a>
   <a href="https://codebeat.co/projects/github-com-ashtanko-dsa-kotlin-main"><img alt="Codebeat" src="https://codebeat.co/badges/adf17f32-6b87-4c47-850b-d408fdbc6a47"/></a>
   <a href="https://www.codefactor.io/repository/github/ashtanko/dsa-kotlin"><img alt="CodeFactor" src="https://www.codefactor.io/repository/github/ashtanko/dsa-kotlin/badge"/></a>
-  <a href="https://codeclimate.com/github/ashtanko/the-algorithms/maintainability"><img alt="Maintainability" src="https://api.codeclimate.com/v1/badges/1a2a2ecaee3023a36b87/maintainability"/></a>
   <a href="https://app.codacy.com/gh/ashtanko/DSA-Kotlin/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/3eecbb4a701d426eb5d1d2dcbb9d7679"/></a>
   <a href="https://hitsofcode.com/github/ashtanko/DSA-Kotlin/view?branch=main&label=Hits-of-Code"><img alt="Hits-of-Code" src="https://hitsofcode.com/github/ashtanko/DSA-Kotlin?branch=main&label=Hits-of-Code"/></a>
   <a href="https://github.com/ashtanko/the-algorithms/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"/></a>
