@@ -5,7 +5,7 @@ A repository that organizes various data structures, algorithms, and solutions t
 <p align="center">
   <a href="https://github.com/ashtanko/the-algorithms/actions/workflows/ci.yml"><img alt="Build" src="https://github.com/ashtanko/the-algorithms/actions/workflows/ci.yml/badge.svg"/></a>
   <a href="https://codebeat.co/projects/github-com-ashtanko-the-algorithms-main"><img alt="codebeat badge" src="https://codebeat.co/badges/f80b1c3d-d24b-4abb-b39c-b891c3b5c612"/></a>
-  <a href="https://www.codefactor.io/repository/github/ashtanko/the-algorithms"><img alt="CodeFactor" src="https://www.codefactor.io/repository/github/ashtanko/the-algorithms/badge"/></a>
+  <a href="https://www.codefactor.io/repository/github/ashtanko/dsa-kotlin"><img alt="CodeFactor" src="https://www.codefactor.io/repository/github/ashtanko/dsa-kotlin/badge"/></a>
   <a href="https://codeclimate.com/github/ashtanko/the-algorithms/maintainability"><img alt="Maintainability" src="https://api.codeclimate.com/v1/badges/1a2a2ecaee3023a36b87/maintainability"/></a>
   <a href="https://app.codacy.com/gh/ashtanko/the-algorithms/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/3eecbb4a701d426eb5d1d2dcbb9d7679"/></a>
   <a href="https://hitsofcode.com/github/ashtanko/the-algorithms/view?branch=main&label=Hits-of-Code"><img alt="Hits-of-Code" src="https://hitsofcode.com/github/ashtanko/the-algorithms?branch=main&label=Hits-of-Code"/></a>
