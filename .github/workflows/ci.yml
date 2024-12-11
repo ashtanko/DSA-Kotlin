@@ -57,18 +57,14 @@ jobs:
       - name: Run jacocoTestReport
         run: ./gradlew jacocoTestReport
 
-      - name: Run check jacocoTestReport
-        run: echo "jacocoTestReportSize" && du -k ./build/reports/jacoco/test/jacocoTestReport.xml | cut -f1
-
       - name: Build with Gradle and test
         run: ./gradlew build -x koverVerify  # Skipping koverVerify to avoid failure if coverage has lowered
 
       - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@master
+        uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          upload: true
-          max-allowed-issues: 100
+          coverage-reports: ./build/reports/jacoco/test/jacocoTestReport.xml
 
       - name: Generate Test Coverage Xml Report
         run: ./gradlew koverXmlReport
