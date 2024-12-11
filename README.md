@@ -6,7 +6,6 @@ A repository that organizes various data structures, algorithms, and solutions t
   <a href="https://github.com/ashtanko/DSA-Kotlin/actions/workflows/ci.yml"><img alt="Build" src="https://github.com/ashtanko/DSA-Kotlin/actions/workflows/ci.yml/badge.svg"/></a>
   <a href="https://codebeat.co/projects/github-com-ashtanko-dsa-kotlin-main"><img alt="Codebeat" src="https://codebeat.co/badges/adf17f32-6b87-4c47-850b-d408fdbc6a47"/></a>
   <a href="https://www.codefactor.io/repository/github/ashtanko/dsa-kotlin"><img alt="CodeFactor" src="https://www.codefactor.io/repository/github/ashtanko/dsa-kotlin/badge"/></a>
-  <a href="https://codeclimate.com/github/ashtanko/the-algorithms/maintainability"><img alt="Maintainability" src="https://api.codeclimate.com/v1/badges/1a2a2ecaee3023a36b87/maintainability"/></a>
   <a href="https://app.codacy.com/gh/ashtanko/DSA-Kotlin/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img alt="Codacy Badge" src="https://app.codacy.com/project/badge/Grade/3eecbb4a701d426eb5d1d2dcbb9d7679"/></a>
   <a href="https://hitsofcode.com/github/ashtanko/DSA-Kotlin/view?branch=main&label=Hits-of-Code"><img alt="Hits-of-Code" src="https://hitsofcode.com/github/ashtanko/DSA-Kotlin?branch=main&label=Hits-of-Code"/></a>
   <a href="https://github.com/ashtanko/the-algorithms/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"/></a>
@@ -14,9 +13,10 @@ A repository that organizes various data structures, algorithms, and solutions t
   <a href="https://ktlint.github.io/"><img alt="CodeStyle" src="https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg"/></a>
   <a href="http://kotlinlang.org/"><img alt="Kotlin Version" src="https://img.shields.io/badge/kotlin-2.0.21-blue.svg"/></a>
   <a href="https://app.codacy.com/gh/ashtanko/DSA-Kotlin/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage"><img alt="codacy test coverage" src="https://app.codacy.com/project/badge/Coverage/3eecbb4a701d426eb5d1d2dcbb9d7679"/></a>
-  <a href="https://codeclimate.com/github/ashtanko/the-algorithms/test_coverage"><img alt="codeclimate test coverage" src="https://api.codeclimate.com/v1/badges/1a2a2ecaee3023a36b87/test_coverage"/></a>
+  <a href="https://codeclimate.com/github/ashtanko/DSA-Kotlin/maintainability"><img alt="Maintainability" src="https://api.codeclimate.com/v1/badges/60b90295847a33756958/maintainability"/></a>
+  <a href="https://codeclimate.com/github/ashtanko/DSA-Kotlin/test_coverage"><img alt="codeclimate test coverage" src="https://api.codeclimate.com/v1/badges/60b90295847a33756958/test_coverage"/></a>
   <a href="https://codecov.io/gh/ashtanko/DSA-Kotlin"><img alt="codecov test coverage" src="https://codecov.io/gh/ashtanko/DSA-Kotlin/graph/badge.svg?token=6vzgrCAl5c"/></a>
-  <a href="https://coveralls.io/github/ashtanko/the-algorithms?branch=main"><img alt="Coverage Status" src="https://coveralls.io/repos/github/ashtanko/the-algorithms/badge.svg?branch=main"/></a>
+  <a href="https://coveralls.io/github/ashtanko/DSA-Kotlin?branch=main"><img alt="Coverage Status" src="https://coveralls.io/repos/github/ashtanko/DSA-Kotlin/badge.svg?branch=main"/></a>
 </p><br>
 
 ## Overview
