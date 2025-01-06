@@ -79,4 +79,4 @@ optimizations.
 
 ## Findings (0)
 
-generated with [detekt version 1.23.7](https://detekt.dev/) on 2024-12-11 22:35:45 UTC
+generated with [detekt version 1.23.7](https://detekt.dev/) on 2025-01-06 23:31:19 UTC
