@@ -32,7 +32,7 @@ import java.util.LinkedList
  * and explores the neighbor nodes first, before moving to the next level neighbors.
  */
 @Suppress("GENERIC_VARIABLE_WRONG_DECLARATION")
-object BreadthFirstSearch {
+object BreadthFirstSearch : GraphTraverseStrategy {
     /**
      * Breadth-first search (BFS) is an algorithm for traversing or searching tree or graph data structures.
      * It starts at the tree root (or some arbitrary node of a graph, sometimes referred to as a 'search key')
@@ -42,7 +42,7 @@ object BreadthFirstSearch {
      * @param start The starting node.
      * @return The list of nodes in the order they were visited.
      */
-    operator fun invoke(graph: Graph, start: Int): List<Int> {
+    override operator fun invoke(graph: Graph, start: Int): List<Int> {
         if (!graph.containsKey(start)) {
             return emptyList()
         }
