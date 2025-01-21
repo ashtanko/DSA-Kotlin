@@ -1,4 +1,5 @@
 import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_0
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
@@ -250,6 +251,16 @@ tasks {
         testLogging.showStandardStreams = true
         useJUnitPlatform()
         finalizedBy(withType(JacocoReport::class.java))
+    }
+}
+
+kotlin {
+    @OptIn(ExperimentalKotlinGradlePluginApi::class)
+    compilerOptions {
+        freeCompilerArgs.add("-Xexpect-actual-classes")
+        freeCompilerArgs.add("-Xwhen-guards")
+        apiVersion.set(KOTLIN_2_0)
+        languageVersion.set(KOTLIN_2_0)
     }
 }
 
