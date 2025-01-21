@@ -257,8 +257,14 @@ tasks {
 kotlin {
     @OptIn(ExperimentalKotlinGradlePluginApi::class)
     compilerOptions {
-        freeCompilerArgs.add("-Xexpect-actual-classes")
-        freeCompilerArgs.add("-Xwhen-guards")
+        freeCompilerArgs.apply {
+            listOf(
+                "-Xexpect-actual-classes",
+                "-Xwhen-guards",
+                "-Xnon-local-break-continue",
+                "-Xmulti-dollar-interpolation",
+            ).forEach(::add)
+        }
         apiVersion.set(KOTLIN_2_0)
         languageVersion.set(KOTLIN_2_0)
     }
