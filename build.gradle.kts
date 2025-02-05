@@ -75,20 +75,20 @@ diktat {
     }
 }
 
-plugins.withId("info.solidsoft.pitest") {
-    configure<info.solidsoft.gradle.pitest.PitestPluginExtension> {
-        jvmArgs.set(listOf("-Xmx2048m"))
-        avoidCallsTo.set(setOf("kotlin.jvm.internal", "kotlin.Result"))
-        targetClasses.set(setOf("dev.shtanko.*"))
-        targetTests.set(setOf("dev.shtanko.*"))
-        pitestVersion.set("1.15.0")
-        verbose.set(true)
-        timestampedReports.set(false)
-        threads.set(System.getenv("PITEST_THREADS")?.toInt() ?: satisfyingNumberOfCores)
-        outputFormats.set(setOf("XML", "HTML"))
-        testPlugin.set("junit5")
-        junit5PluginVersion.set("1.0.0")
-    }
+pitest {
+    jvmArgs.set(listOf("-Xmx8192m"))
+    avoidCallsTo.set(setOf("kotlin.jvm.internal", "kotlin.Result"))
+    targetClasses.set(setOf("dev.shtanko.*"))
+    targetTests.set(setOf("dev.shtanko.*"))
+    pitestVersion.set("1.15.0")
+    verbose.set(true)
+    timestampedReports.set(false)
+    threads.set(System.getenv("PITEST_THREADS")?.toInt() ?: satisfyingNumberOfCores)
+    outputFormats.set(setOf("XML", "HTML"))
+    testPlugin.set("junit5")
+    junit5PluginVersion = "1.2.1"
+    setWithHistory(true)
+    mutationThreshold.set(40)
 }
 
 spotless {
@@ -268,6 +268,7 @@ kotlin {
 }
 
 dependencies {
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher") { because("required for pitest") }
     libs.apply {
         kotlin.apply {
             implementation(stdlib)
