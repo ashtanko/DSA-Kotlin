@@ -55,8 +55,7 @@ class GraphTest {
             1 to emptyList(),
             2 to listOf(1),
         )
-
-        assertTrue(graph[1]!!.isEmpty())
+        assertTrue(graph[1]?.isEmpty() == true)
         assertEquals(listOf(1), graph[2])
     }
 }

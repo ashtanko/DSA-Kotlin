@@ -53,7 +53,7 @@ object BreadthFirstSearch : GraphTraverseStrategy {
         val result = mutableListOf<Int>()
 
         while (queue.isNotEmpty()) {
-            val node = queue.poll()!!
+            val node = queue.poll() ?: return emptyList()
             result.add(node)
 
             graph[node]?.forEach { neighbor ->
