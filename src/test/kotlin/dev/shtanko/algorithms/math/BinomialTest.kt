@@ -37,7 +37,7 @@ class BinomialTest {
     @DisplayName("Binomial Test")
     @ParameterizedTest(name = "n: {0}, k: {1} -> Expected: {2}")
     @ArgumentsSource(InputArgumentsProvider::class)
-    fun `binomial test`(
+    fun `binomial coefficient test`(
         n: Int,
         k: Int,
         expected: Long,
