@@ -16,6 +16,7 @@ A repository that organizes various data structures, algorithms, and solutions t
   <a href="https://codeclimate.com/github/ashtanko/DSA-Kotlin/maintainability"><img src="https://api.codeclimate.com/v1/badges/60b90295847a33756958/maintainability" /></a>
   <a href="https://codeclimate.com/github/ashtanko/DSA-Kotlin/test_coverage"><img src="https://api.codeclimate.com/v1/badges/60b90295847a33756958/test_coverage" /></a>
   <a href="https://codecov.io/gh/ashtanko/DSA-Kotlin"><img alt="codecov test coverage" src="https://codecov.io/gh/ashtanko/DSA-Kotlin/graph/badge.svg?token=6vzgrCAl5c"/></a>
+  <a href="https://qlty.sh/gh/ashtanko/projects/DSA-Kotlin"><img src="https://qlty.sh/badges/501e90c2-d0a4-4f9f-92f0-622f7d8993a5/maintainability.svg" alt="Maintainability" /></a>
 </p><br>
 
 ## Overview
