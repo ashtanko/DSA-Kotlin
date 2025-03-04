@@ -74,8 +74,7 @@ jobs:
       - name: Coveralls Parallel
         uses: coverallsapp/github-action@v2
         with:
-          parallel: true
-          flag-name: run-${{ join(matrix.*, '-') }}
+          parallel: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
           file: ./build/reports/jacoco/test/jacocoTestReport.xml
           debug: false
