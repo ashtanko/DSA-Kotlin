@@ -55,7 +55,9 @@ jobs:
         run: ./gradlew detekt ktlintCheck diktatCheck jacocoTestReport --build-cache --no-daemon --stacktrace --gradle-user-home "$GRADLE_HOME"
 
       - name: Run jacocoTestReport
-        run: ./gradlew jacocoTestReport
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        run: ./gradlew test jacocoTestReport coverallsJacoco
 
       - name: Build with Gradle and test
         run: ./gradlew build -x koverVerify  # Skipping koverVerify to avoid failure if coverage has lowered
