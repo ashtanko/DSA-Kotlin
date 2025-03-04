@@ -21,13 +21,30 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
-fun IntArray.isSorted(): Boolean {
-    return this.asSequence().zipWithNext { a, b -> a <= b }.all { it }
-}
+/**
+ * Checks if the integer array is sorted in non-decreasing order.
+ *
+ * This function uses a sequence to compare each element with the next one
+ * and ensures that all elements are in non-decreasing order.
+ *
+ * @return `true` if the array is sorted in non-decreasing order, `false`
+ * otherwise.
+ */
+fun IntArray.isSorted(): Boolean =
+    asSequence().zipWithNext { a, b -> a <= b }.all { it }
 
+/**
+ * Checks if the array of integers is sorted in non-decreasing order.
+ *
+ * This function uses a sequence to compare each element with the next one
+ * and ensures that all elements are in non-decreasing order.
+ *
+ * @return `true` if the array is sorted in non-decreasing order, `false`
+ * otherwise.
+ */
 @Suppress("ArrayPrimitive")
-fun Array<Int>.isSorted(): Boolean {
-    return this.asSequence().zipWithNext { a, b -> a <= b }.all { it }
-}
+fun Array<Int>.isSorted(): Boolean =
+    asSequence().zipWithNext { a, b -> a <= b }.all { it }

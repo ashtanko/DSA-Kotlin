@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
 import dev.shtanko.algorithms.extensions.swap
@@ -33,14 +34,19 @@ import dev.shtanko.algorithms.extensions.swap
  * it is too slow and impractical for most problems even when compared to insertion sort. It can be practical
  * if the input is usually in sorted order but may occasionally have some out-of-order elements nearly in position.
  *
- * Worst-case performance       O(n^2)
- * Best-case performance        O(n)
- * Average performance          O(n^2)
- * Worst-case space complexity  O(1)
+ * Worst-case performance:       O(n^2)
+ * Best-case performance:        O(n)
+ * Average performance:          O(n^2)
+ * Worst-case space complexity:  O(1)
  */
-class BubbleSort : AbstractSortStrategy {
-
-    override fun <T : Comparable<T>> perform(arr: Array<T>) {
+data object BubbleSort : Sortable {
+    /**
+     * Performs the bubble sort operation on the given array.
+     *
+     * @param arr The array to sort.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    override fun <T : Comparable<T>> invoke(arr: Array<T>) {
         var exchanged: Boolean
 
         do {
@@ -55,9 +61,24 @@ class BubbleSort : AbstractSortStrategy {
     }
 }
 
-class SimpleBubbleSort : AbstractSortStrategy {
-
-    override fun <T : Comparable<T>> perform(arr: Array<T>) {
+/**
+ * SimpleBubbleSort is a basic implementation of the bubble sort algorithm.
+ * It iterates through the array multiple times, comparing adjacent elements and swapping them if they are out of order.
+ * The algorithm continues this process until the array is sorted.
+ *
+ * Worst-case performance:       O(n^2)
+ * Best-case performance:        O(n^2)
+ * Average performance:          O(n^2)
+ * Worst-case space complexity:  O(1)
+ */
+data object SimpleBubbleSort : Sortable {
+    /**
+     * Performs the simple bubble sort operation on the given array.
+     *
+     * @param arr The array to sort.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    override fun <T : Comparable<T>> invoke(arr: Array<T>) {
         for (i in 0 until arr.size - 1) {
             for (j in i + 1 until arr.size) {
                 if (arr[i] > arr[j]) {

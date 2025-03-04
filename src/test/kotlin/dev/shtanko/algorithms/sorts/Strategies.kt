@@ -21,32 +21,35 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
-internal class SelectionSortTest : AbstractSortTest<SelectionSort>(SelectionSort())
+class SelectionSortTest : SortTest<SelectionSort>(SelectionSort)
 
-internal class StableSelectionSortTest : AbstractSortTest<StableSelectionSort>(StableSelectionSort())
+class StableSelectionSortTest : SortTest<StableSelectionSort>(StableSelectionSort)
 
-internal class ShellSortTest : AbstractSortTest<ShellSort>(ShellSort())
+class ShellSortTest : SortTest<ShellSort>(ShellSort)
 
-internal class QuickSortTest : AbstractSortTest<QuickSort>(QuickSort())
+class QuickSortTest : SortTest<QuickSort>(QuickSort)
 
-internal class MergeSortTest : AbstractSortTest<MergeSort>(MergeSort())
+class MergeSortTest : SortTest<MergeSort>(MergeSort)
 
-internal class InsertionSortTest : AbstractSortTest<InsertionSort>(InsertionSort())
+class BottomUpMergeSortTest : SortTest<Sortable>(BottomUpMergeSort)
 
-internal class InsertionSort2Test : AbstractSortTest<InsertionSort2>(InsertionSort2())
+class InsertionSortTest : SortTest<InsertionSort>(InsertionSort)
 
-internal class HeapSortTest : AbstractSortTest<HeapSort>(HeapSort())
+class InsertionSort2Test : SortTest<InsertionSort2>(InsertionSort2)
 
-internal class BubbleSortTest : AbstractSortTest<BubbleSort>(BubbleSort())
+class HeapSortTest : SortTest<HeapSort>(HeapSort)
 
-internal class SimpleBubbleSortTest : AbstractSortTest<SimpleBubbleSort>(SimpleBubbleSort())
+class BubbleSortTest : SortTest<BubbleSort>(BubbleSort)
 
-internal class ArraySortTest : AbstractSortTest<ArraySort>(ArraySort())
+class SimpleBubbleSortTest : SortTest<SimpleBubbleSort>(SimpleBubbleSort)
 
-internal class PancakeSortTest : AbstractSortTest<PancakeSort>(PancakeSort())
+class JvmSortTest : SortTest<JvmSort>(JvmSort)
 
-internal class GnomeSortTest : AbstractSortTest<GnomeSort>(GnomeSort())
+class PancakeSortTest : SortTest<PancakeSort>(PancakeSort)
 
-internal class QuickSortRecursiveTest2 : AbstractSortTest<QuickSortRecursive>(QuickSortRecursive())
+class GnomeSortTest : SortTest<GnomeSort>(GnomeSort)
+
+class QuickSortRecursiveTest2 : SortTest<QuickSortRecursive>(QuickSortRecursive)

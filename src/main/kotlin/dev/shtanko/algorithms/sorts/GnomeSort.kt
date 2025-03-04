@@ -21,17 +21,31 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
 import dev.shtanko.algorithms.extensions.swap
 
 /**
- * @link(https://en.wikipedia.org/wiki/Gnome_sort)
- * Gnome sort (dubbed stupid sort) is a sorting algorithm originally proposed by an Iranian computer scientist
- *  Hamid Sarbazi-Azad (professor of Computer Science and Engineering at Sharif University of Technology)[1] in 2000.
+ * Gnome sort is a simple sorting algorithm that works by repeatedly moving an element one position
+ * towards its correct position in the sorted part of the array. It does this by comparing adjacent
+ * elements and swapping them if they are in the wrong order. This process is continued until the
+ * entire array is sorted. The algorithm gets its name from the idea that a gnome always moves the
+ * flower pots to put them in the correct order.
+ *
+ * Worst-case performance:       O(n^2)
+ * Best-case performance:        O(n)
+ * Average performance:          O(n^2)
+ * Worst-case space complexity:  O(1)
  */
-class GnomeSort : AbstractSortStrategy {
-    override fun <T : Comparable<T>> perform(arr: Array<T>) {
+data object GnomeSort : Sortable {
+    /**
+     * Performs the gnome sort operation on the given array.
+     *
+     * @param arr The array to sort.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    override fun <T : Comparable<T>> invoke(arr: Array<T>) {
         var i = 1
         var j = 2
         while (i < arr.size) {

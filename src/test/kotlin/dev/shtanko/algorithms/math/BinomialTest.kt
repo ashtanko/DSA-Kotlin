@@ -21,9 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.math
 
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
@@ -31,9 +33,20 @@ import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
 import java.util.stream.Stream
 
-internal class BinomialTest {
+class BinomialTest {
+    @DisplayName("Binomial Test")
+    @ParameterizedTest(name = "n: {0}, k: {1} -> Expected: {2}")
+    @ArgumentsSource(InputArgumentsProvider::class)
+    fun `binomial test`(
+        n: Int,
+        k: Int,
+        expected: Long,
+    ) {
+        val actual = binomial(n, k)
+        assertThat(actual).isEqualTo(expected)
+    }
 
-    internal class InputArgumentsProvider : ArgumentsProvider {
+    class InputArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
             Arguments.of(0, 1, 0),
             Arguments.of(1, 1, 1),
@@ -54,12 +67,5 @@ internal class BinomialTest {
             Arguments.of(6, 4, 15),
             Arguments.of(6, 5, 6),
         )
-    }
-
-    @ParameterizedTest
-    @ArgumentsSource(InputArgumentsProvider::class)
-    internal fun `binomial test`(n: Int, k: Int, expected: Long) {
-        val actual = binomial(n, k)
-        assertThat(actual).isEqualTo(expected)
     }
 }

@@ -21,14 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.search
 
-internal class LinearSearchTest : AbstractSearchTest<LinearSearch<Int>>(LinearSearch())
-internal class LinearSearchStringTest : AbstractStringSearchTest<LinearSearch<String>>(LinearSearch())
+class LinearSearchTest : IntSearchTest<LinearSearch<Int>>(LinearSearch())
+class LinearSearchStringTest : StringSearchTest<LinearSearch<String>>(LinearSearch())
 
-internal class BinarySearchTest : AbstractSearchTest<BinarySearch<Int>>(BinarySearch())
-internal class BinarySearchStringTest : AbstractStringSearchTest<BinarySearch<String>>(BinarySearch())
+class BinarySearchTest : IntSearchTest<BinarySearch<Int>>(BinarySearch())
+class BinarySearchStringTest : StringSearchTest<BinarySearch<String>>(BinarySearch())
 
-internal class BinaryRecursiveSearchTest : AbstractSearchTest<BinaryRecursiveSearch<Int>>(BinaryRecursiveSearch())
-internal class BinaryRecursiveStringSearchTest :
-    AbstractStringSearchTest<BinaryRecursiveSearch<String>>(BinaryRecursiveSearch())
+class BinaryRecursiveSearchTest : IntSearchTest<BinaryRecursiveSearch<Int>>(BinaryRecursiveSearch())
+class BinaryRecursiveStringSearchTest :
+    StringSearchTest<BinaryRecursiveSearch<String>>(BinaryRecursiveSearch())

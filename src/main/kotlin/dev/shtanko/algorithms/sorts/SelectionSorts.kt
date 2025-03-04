@@ -21,43 +21,60 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
+import dev.shtanko.algorithms.extensions.findMinimumIndex
 import dev.shtanko.algorithms.extensions.swap
 
 /**
- * Selection sort is a simple sorting algorithm dividing the input list into two parts: the sublist of items already
- * sorted, which is built up from left to right at the front (left) of the list, and the sublist of items remaining
- * to be sorted that occupy the rest of the list. Initially, the sorted sublist is empty and the unsorted sublist
- * is the entire input list. The algorithm proceeds by finding the smallest (or largest, depending on sorting order)
- * element in the unsorted sublist, exchanging (swapping) it with the leftmost unsorted element
- * (putting it in sorted order), and moving the sublist boundaries one element to the right.
+ * Selection sort is a simple comparison-based sorting algorithm. It works by dividing the array into a sorted
+ * and an unsorted region. It repeatedly selects the smallest (or largest) element from the unsorted region
+ * and moves it to the sorted region. The algorithm maintains two subarrays: the subarray of sorted elements
+ * and the subarray of unsorted elements.
  *
- * Worst-case performance       O(n^2)
- * Best-case performance        O(n^2)
- * Average performance          O(n^2)
- * Worst-case space complexity  O(1)
+ * Worst-case performance:       O(n^2)
+ * Best-case performance:        O(n^2)
+ * Average performance:          O(n^2)
+ * Worst-case space complexity:  O(1)
  */
-class SelectionSort : AbstractSortStrategy {
-
-    override fun <T : Comparable<T>> perform(arr: Array<T>) {
+data object SelectionSort : Sortable {
+    /**
+     * Performs the selection sort operation on the given array.
+     *
+     * @param arr The array to sort.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    override fun <T : Comparable<T>> invoke(arr: Array<T>) {
         for (i in arr.indices) {
-            var min = i
-            for (j in i + 1 until arr.size) {
-                if (arr[j] < arr[min]) {
-                    min = j
-                }
+            val min = arr.findMinimumIndex(i)
+            if (min != i) {
+                arr.swap(min, i)
             }
-            if (min != i) arr.swap(min, i)
         }
     }
 }
 
-class StableSelectionSort : AbstractSortStrategy {
-
-    override fun <T : Comparable<T>> perform(arr: Array<T>) {
+/**
+ * Stable Selection Sort is a variation of the selection sort algorithm that maintains the relative order
+ * of elements with equal values. It achieves this by moving the minimum element to the current position
+ * and shifting the elements to the right, instead of swapping them directly.
+ *
+ * Worst-case performance:       O(n^2)
+ * Best-case performance:        O(n^2)
+ * Average performance:          O(n^2)
+ * Worst-case space complexity:  O(1)
+ */
+data object StableSelectionSort : Sortable {
+    /**
+     * Performs the stable selection sort operation on the given array.
+     *
+     * @param arr The array to sort.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    override fun <T : Comparable<T>> invoke(arr: Array<T>) {
         for (i in arr.indices) {
-            var min = i
+            var min = arr.findMinimumIndex(i)
             for (j in i + 1 until arr.size) {
                 if (arr[j] < arr[min]) {
                     min = j

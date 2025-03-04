@@ -21,22 +21,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.math
 
 /**
- * Greatest common divisor
+ * Calculates the greatest common divisor (GCD) of the two integers in the Pair.
+ *
+ * @receiver The Pair of integers.
+ * @return The greatest common divisor of the two integers.
  */
 fun Pair<Int, Int>.gcd(): Int {
-    var a = first
-    var b = second
-    while (b != 0) {
-        val temp = a % b
-        a = b
-        b = temp
+    var largerNumber = first
+    var smallerNumber = second
+    while (smallerNumber != 0) {
+        val remainder = largerNumber % smallerNumber
+        largerNumber = smallerNumber
+        smallerNumber = remainder
     }
-    return a
+    return largerNumber
 }
 
-fun gcd(a: Int, b: Int): Int {
-    return if (b == 0) a else gcd(b, a % b)
-}
+/**
+ * Calculates the greatest common divisor (GCD) of two integers.
+ *
+ * @param number1 The first integer.
+ * @param number2 The second integer.
+ * @return The greatest common divisor of the two integers.
+ */
+fun gcd(
+    number1: Int,
+    number2: Int
+): Int = if (number2 == 0) number1 else gcd(number2, number1 % number2)

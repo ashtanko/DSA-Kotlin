@@ -21,23 +21,41 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.math
 
+import dev.shtanko.algorithms.EPSILON
 import kotlin.math.abs
 
-private const val EPSILON = 1e-15
+/**
+ * Calculates the square root of the given integer.
+ *
+ * @param number The integer to calculate the square root of.
+ * @param tolerance The tolerance value for convergence (default: EPSILON).
+ * @return The square root of the given integer.
+ */
+fun sqrt(
+    number: Int,
+    tolerance: Double = EPSILON,
+): Double = sqrt(number.toDouble(), tolerance)
 
 /**
- * Compute the square root using Newton's method
+ * Calculates the square root of the given double.
+ *
+ * @param number The double to calculate the square root of.
+ * @param tolerance The tolerance value for convergence (default: EPSILON).
+ * @return The square root of the given double.
  */
-fun sqrt(c: Int, e: Double = EPSILON): Double {
-    return sqrt(c.toDouble(), e)
-}
-
-fun sqrt(c: Double, e: Double = EPSILON): Double {
-    if (c < 0) return Double.NaN
-    var t = c
-    while (abs(t - c / t) > e * t)
-        t = (c / t + t) / 2.0
-    return t
+fun sqrt(
+    number: Double,
+    tolerance: Double = EPSILON,
+): Double {
+    if (number < 0) {
+        return Double.NaN
+    }
+    var approximation = number
+    while (abs(approximation - number / approximation) > tolerance * approximation) {
+        approximation = (number / approximation + approximation) / 2
+    }
+    return approximation
 }

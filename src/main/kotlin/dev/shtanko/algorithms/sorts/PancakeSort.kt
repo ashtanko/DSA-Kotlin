@@ -21,17 +21,30 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
 import dev.shtanko.algorithms.extensions.flip
 
 /**
- * Pancake sorting is the colloquial term for the mathematical problem of sorting a disordered stack of pancakes in
- * order of size when a spatula can be inserted at any point in the stack and used to flip all pancakes above it.
- * A pancake number is the minimum number of flips required for a given number of pancakes.
+ * Pancake sort is a sorting algorithm that sorts a sequence by repeatedly flipping the elements.
+ * In each iteration, it finds the maximum element and flips the subsequence from the first element
+ * up to the maximum element.
+ * This process is repeated until the sequence is sorted.
+ *
+ * Worst-case performance:       O(n^2)
+ * Best-case performance:        O(n)
+ * Average performance:          O(n^2)
+ * Worst-case space complexity:  O(1)
  */
-class PancakeSort : AbstractSortStrategy {
-    override fun <T : Comparable<T>> perform(arr: Array<T>) {
+data object PancakeSort : Sortable {
+    /**
+     * Performs the pancake sort operation on the given array.
+     *
+     * @param arr The array to sort.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    override fun <T : Comparable<T>> invoke(arr: Array<T>) {
         for (i in arr.indices) {
             var max = arr[0]
             var index = 0

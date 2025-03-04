@@ -21,10 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.utils
 
 import dev.shtanko.algorithms.extensions.reverse
 import org.junit.jupiter.api.Assertions.assertArrayEquals
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
@@ -33,6 +35,19 @@ import org.junit.jupiter.params.provider.ArgumentsSource
 import java.util.stream.Stream
 
 class CharArrayExtTest {
+    @DisplayName("Reverse Char Array")
+    @ParameterizedTest(name = "Array: {0}, Left: {1}, Right: {2} -> Expected: {3}")
+    @ArgumentsSource(InputArgumentsProvider::class)
+    fun `reverse char array test`(
+        arr: CharArray,
+        left: Int,
+        right: Int,
+        expected: CharArray,
+    ) {
+        arr.reverse(left, right)
+        assertArrayEquals(expected, arr)
+    }
+
     private class InputArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
             Arguments.of(
@@ -60,12 +75,5 @@ class CharArrayExtTest {
                 charArrayOf('a', 'b'),
             ),
         )
-    }
-
-    @ParameterizedTest
-    @ArgumentsSource(InputArgumentsProvider::class)
-    fun `reverse char array test`(arr: CharArray, left: Int, right: Int, expected: CharArray) {
-        arr.reverse(left, right)
-        assertArrayEquals(expected, arr)
     }
 }

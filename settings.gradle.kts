@@ -1,1 +1,1 @@
-rootProject.name = "TheAlgorithmsInKotlin"
+rootProject.name = "DSA-Kotlin"

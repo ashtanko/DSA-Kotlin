@@ -21,34 +21,77 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
 /**
+ * Merge sort is an efficient, stable, and comparison-based sorting algorithm.
+ * It works by dividing the unsorted list into n sublists, each containing one element,
+ * and then repeatedly merging sublists to produce new sorted sublists until there is only one sublist remaining.
+ *
  * Invented in 1945 by John von Neumann, merge sort is an efficient algorithm using the divide and conquer approach
  * which is to divide a big problem into smaller problems and solve them. Conceptually, a merge sort works as follows:
  * 1) Divide the unsorted list into n sublists, each containing 1 element (a list of 1 element is considered sorted).
  * 2) Repeatedly merge sublists to produce new sorted sublists until there is only 1 sublist remaining.
  *
- * Worst-case performance       O(n log n)
- * Best-case performance        O(n log n)
- * Average performance          O(n log n)
- * Worst-case space complexity  O(n)
+ * Worst-case performance:       O(n log n)
+ * Best-case performance:        O(n log n)
+ * Average performance:          O(n log n)
+ * Worst-case space complexity:  O(n)
  */
-class MergeSort : AbstractSortStrategy {
-    override fun <T : Comparable<T>> perform(arr: Array<T>) {
+data object MergeSort : Sortable {
+    /**
+     * Performs the merge sort operation on the given array.
+     *
+     * @param arr The array to sort.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    override fun <T : Comparable<T>> invoke(arr: Array<T>) {
         val aux = arr.clone()
         sort(arr, aux, 0, arr.size - 1)
     }
 
-    private fun <T : Comparable<T>> sort(arr: Array<T>, aux: Array<T>, low: Int, high: Int) {
-        if (high <= low) return
+    /**
+     * Recursively sorts the array using merge sort.
+     *
+     * @param arr The array to sort.
+     * @param aux The auxiliary array used for merging.
+     * @param low The low index of the current range.
+     * @param high The high index of the current range.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    private fun <T : Comparable<T>> sort(
+        arr: Array<T>,
+        aux: Array<T>,
+        low: Int,
+        high: Int,
+    ) {
+        if (high <= low) {
+            return
+        }
         val mid = (low + high) / 2
         sort(arr, aux, low, mid)
         sort(arr, aux, mid + 1, high)
         merge(arr, aux, low, mid, high)
     }
 
-    private fun <T : Comparable<T>> merge(arr: Array<T>, aux: Array<T>, low: Int, mid: Int, high: Int) {
+    /**
+     * Merges two sorted subarrays into a single sorted subarray.
+     *
+     * @param arr The array to sort.
+     * @param aux The auxiliary array used for merging.
+     * @param low The low index of the current range.
+     * @param mid The mid index of the current range.
+     * @param high The high index of the current range.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    private fun <T : Comparable<T>> merge(
+        arr: Array<T>,
+        aux: Array<T>,
+        low: Int,
+        mid: Int,
+        high: Int,
+    ) {
         System.arraycopy(arr, low, aux, low, high - low + 1)
 
         var i = low

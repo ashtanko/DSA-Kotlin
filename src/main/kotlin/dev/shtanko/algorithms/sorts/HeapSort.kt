@@ -21,50 +21,70 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
 import dev.shtanko.algorithms.extensions.swap
 
 /**
- * Heap sort is a comparison based sorting technique based on Binary Heap data structure. It is similar to selection
- * sort where we first find the maximum element and place the maximum element at the end. We repeat the same process
- * for remaining element.
+ * Heap sort is a comparison-based sorting algorithm that uses a binary heap data structure.
+ * It divides the input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region
+ * by extracting the largest element from it and inserting it into the sorted region. The algorithm
+ * efficiently builds a max heap on the input array to facilitate the extraction of maximum elements.
  *
- * Worst-case performance       O(n*log(n))
- * Best-case performance        O(n*log(n))
- * Average-case performance     O(n*log(n))
- * Worst-case space complexity  O(1) (auxiliary)
+ * Worst-case performance:       O(n log n)
+ * Best-case performance:        O(n log n)
+ * Average performance:          O(n log n)
+ * Worst-case space complexity:  O(1)
  */
-class HeapSort : AbstractSortStrategy {
-
-    override fun <T : Comparable<T>> perform(arr: Array<T>) {
-        val n = arr.size
-        for (i in n / 2 - 1 downTo 0) {
-            heapify(arr, n, i)
+data object HeapSort : Sortable {
+    /**
+     * Performs the heap sort operation on the given array.
+     *
+     * @param arr The array to sort.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    override fun <T : Comparable<T>> invoke(arr: Array<T>) {
+        val size = arr.size
+        for (i in size / 2 - 1 downTo 0) {
+            heapify(arr, size, i)
         }
 
-        for (i in n - 1 downTo 0) {
+        for (i in size - 1 downTo 0) {
             arr.swap(0, i)
             heapify(arr, i, 0)
         }
     }
 
-    private fun <T : Comparable<T>> heapify(arr: Array<T>, n: Int, i: Int) {
-        var largest = i
-        val l = 2 * i + 1
-        val r = 2 * i + 2
+    /**
+     * Performs heapify operation on the array.
+     *
+     * @param array The array to heapify.
+     * @param size The size of the heap.
+     * @param index The index of the current element in the heap.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    @Suppress("SAY_NO_TO_VAR")
+    private fun <T : Comparable<T>> heapify(
+        array: Array<T>,
+        size: Int,
+        index: Int,
+    ) {
+        var largest = index
+        val left = 2 * index + 1
+        val right = 2 * index + 2
 
-        if (l < n && arr[l] > arr[largest]) {
-            largest = l
+        if (left < size && array[left] > array[largest]) {
+            largest = left
         }
 
-        if (r < n && arr[r] > arr[largest]) {
-            largest = r
+        if (right < size && array[right] > array[largest]) {
+            largest = right
         }
 
-        if (largest != i) {
-            arr.swap(i, largest)
-            heapify(arr, n, largest)
+        if (largest != index) {
+            array.swap(index, largest)
+            heapify(array, size, largest)
         }
     }
 }

@@ -21,40 +21,50 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
 import dev.shtanko.algorithms.extensions.swap
 
 /**
- * Implementation of Shell Sort
- * @link https://en.wikipedia.org/wiki/Shellsort
- * Best complexity: O(n log n)
- * Average complexity: O(n^4/3)
- * Worst complexity: O(n^4/3)
- * Space Complexity: O(1)
+ * Shell sort is an in-place comparison sort that can be seen as either a generalization of insertion sort or a
+ * variation of bubble sort. It starts by sorting pairs of elements far apart from each other and progressively
+ * reducing the gap between elements to be compared. The final iteration uses a gap of 1, which is equivalent to
+ * an insertion sort. The algorithm's time complexity depends on the chosen gap sequence.
+ *
+ * Worst-case performance:       O(n^2)
+ * Best-case performance:        O(n log n)
+ * Average performance:          Depends on the gap sequence
+ * Worst-case space complexity:  O(1)
  * Stable: No
  */
-class ShellSort : AbstractSortStrategy {
+data object ShellSort : Sortable {
+    // Constant used to calculate the gap sequence
+    const val GAP = 3
 
-    override fun <T : Comparable<T>> perform(arr: Array<T>) {
-        val n = arr.size
-        var h = 1
-        while (h < n / GAP) {
-            h = h * GAP + 1
+    /**
+     * Performs the Shell sort operation on the given array.
+     *
+     * @param arr The array to sort.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    override fun <T : Comparable<T>> invoke(arr: Array<T>) {
+        val size = arr.size
+        var gap = 1
+        while (gap < size / GAP) {
+            gap = gap * GAP + 1
         }
 
-        while (h >= 1) {
-            for (i in h until n) {
-                for (j in i downTo h step h) {
-                    if (arr[j - h] < arr[j]) break
-                    arr.swap(j, j - h)
+        while (gap >= 1) {
+            for (i in gap until size) {
+                var j = i
+                while (j >= gap && arr[j - gap] > arr[j]) {
+                    arr.swap(j, j - gap)
+                    j -= gap
                 }
             }
-            h /= GAP
+            // Reduce the gap for the next iteration
+            gap /= GAP
         }
-    }
-
-    companion object {
-        const val GAP = 3
     }
 }

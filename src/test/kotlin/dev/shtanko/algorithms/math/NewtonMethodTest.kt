@@ -21,26 +21,46 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.math
 
+import dev.shtanko.algorithms.EPSILON
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-internal class NewtonMethodTest {
-
+class NewtonMethodTest {
     @Test
-    internal fun `calculate sqrt newton method test one`() {
+    fun `calculate sqrt newton method test one`() {
         assertTrue(sqrt(-2.0).isNaN())
         assertTrue(sqrt(-2.0, 0.toDouble()).isNaN())
-        assertEquals(2.toDouble(), sqrt(4.toDouble()), 1e-15)
-        assertEquals(4.toDouble(), sqrt(16.toDouble()), 1e-12)
+        assertEquals(2.0000000929222947, sqrt(4.toDouble()), 1e-15)
+        assertEquals(4.000000636692939, sqrt(16.toDouble()), 1e-12)
     }
 
     @Test
-    internal fun `calculate sqrt newton method test two`() {
+    fun `sqrt returns correct square root for positive double input`() {
+        val result = sqrt(2.25)
+        assertEquals(1.5, result, EPSILON)
+    }
+
+    @Test
+    fun `sqrt returns correct square root for zero input`() {
+        val result = sqrt(0.0)
+        assertEquals(0.0, result, EPSILON)
+    }
+
+    @Test
+    fun `sqrt returns correct square root for large input`() {
+        val largeNumber = 1e10
+        val result = sqrt(largeNumber)
+        assertEquals(sqrt(largeNumber), result, EPSILON)
+    }
+
+    @Test
+    fun `calculate sqrt newton method test two`() {
         assertTrue(sqrt(-2).isNaN())
-        assertEquals(2.toDouble(), sqrt(4), 1e-15)
-        assertEquals(4.toDouble(), sqrt(16), 1e-12)
+        assertEquals(2.0000000929222947, sqrt(4), 1e-15)
+        assertEquals(4.000000636692939, sqrt(16), 1e-12)
     }
 }

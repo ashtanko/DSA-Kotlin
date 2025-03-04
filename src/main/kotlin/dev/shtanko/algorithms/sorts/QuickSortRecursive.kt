@@ -21,10 +21,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
-class QuickSortRecursive : AbstractSortStrategy {
-    override fun <T : Comparable<T>> perform(arr: Array<T>) {
+/**
+ * Recursive Quick Sort is a sorting algorithm that works by selecting a pivot element from the array and
+ * partitioning the other elements into two sub-arrays, according to whether they are less than or greater
+ * than the pivot.
+ * It then recursively sorts the sub-arrays. This implementation uses a functional approach with Kotlin's
+ * extension functions.
+ *
+ * Worst-case performance:       O(n^2)
+ * Best-case performance:        O(n log n)
+ * Average performance:          O(n log n)
+ * Worst-case space complexity:  O(log n)
+ */
+data object QuickSortRecursive : Sortable {
+    /**
+     * Performs the recursive quick sort operation on the given array.
+     *
+     * @param arr The array to sort.
+     * @param T The type of elements in the array, must be comparable.
+     */
+    override fun <T : Comparable<T>> invoke(arr: Array<T>) {
         val sorted = arr.toList().quickSort()
         for (i in sorted.indices) {
             arr[i] = sorted[i]
@@ -32,11 +51,18 @@ class QuickSortRecursive : AbstractSortStrategy {
     }
 }
 
-fun <T : Comparable<T>> List<T>.quickSort(): List<T> = when {
-    size < 2 -> this
-    else -> {
-        val pivot = first()
-        val (smaller, greater) = drop(1).partition { it <= pivot }
-        smaller.quickSort() + pivot + greater.quickSort()
+/**
+ * Extension function to perform quick sort on a list of comparable elements.
+ *
+ * @receiver List<T> The list to be sorted.
+ * @return List<T> A new list containing the sorted elements.
+ */
+fun <T : Comparable<T>> List<T>.quickSort(): List<T> =
+    when {
+        size < 2 -> this
+        else -> {
+            val pivot = first()
+            val (smaller, greater) = drop(1).partition { it <= pivot }
+            smaller.quickSort() + pivot + greater.quickSort()
+        }
     }
-}

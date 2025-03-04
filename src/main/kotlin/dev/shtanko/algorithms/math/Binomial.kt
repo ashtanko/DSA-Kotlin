@@ -21,19 +21,27 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.math
 
 /**
- * Binomial Coefficient
+ * Calculates the binomial coefficient (n choose k).
  * A binomial coefficient C(n, k) can be defined as the coefficient of X^k in the expansion of (1 + X)^n.
  * A binomial coefficient C(n, k) also gives the number of ways, disregarding order,
  * that k objects can be chosen from among n objects; more formally, the number of k-element subsets
  * (or k-combinations) of an n-element set.
+ *
+ * @param numOfItems The total number of items.
+ * @param itemsToChoose The number of items to choose.
+ * @return The binomial coefficient.
  */
-fun binomial(n: Int, k: Int): Long {
-    var j = n - k + 1
+fun binomial(
+    numOfItems: Int,
+    itemsToChoose: Int,
+): Long {
+    var j = numOfItems - itemsToChoose + 1
     var binomial = 1L
-    for (i in 1 until k + 1) {
+    for (i in 1 until itemsToChoose + 1) {
         binomial = binomial * j / i
         j++
     }

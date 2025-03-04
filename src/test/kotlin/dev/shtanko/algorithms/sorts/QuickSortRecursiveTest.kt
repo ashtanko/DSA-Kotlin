@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.sorts
 
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -31,8 +32,15 @@ import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
 import java.util.stream.Stream
 
-internal class QuickSortRecursiveTest {
-    internal class InputArgumentsProvider : ArgumentsProvider {
+class QuickSortRecursiveTest {
+    @ParameterizedTest
+    @ArgumentsSource(InputArgumentsProvider::class)
+    fun `quick sort test`(list: List<Int>, expected: List<Int>) {
+        val actual = list.quickSort()
+        assertEquals(expected, actual)
+    }
+
+    class InputArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
             Arguments.of(
                 listOf<Int>(),
@@ -55,12 +63,5 @@ internal class QuickSortRecursiveTest {
                 listOf(0, 1, 2, 3, 4, 5, 5, 7),
             ),
         )
-    }
-
-    @ParameterizedTest
-    @ArgumentsSource(InputArgumentsProvider::class)
-    internal fun `quick sort test`(list: List<Int>, expected: List<Int>) {
-        val actual = list.quickSort()
-        assertEquals(expected, actual)
     }
 }

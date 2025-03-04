@@ -21,22 +21,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
 */
+
 package dev.shtanko.algorithms.math
 
 import dev.shtanko.algorithms.DECIMAL
 import kotlin.math.pow
 
-interface NarcissisticNumber {
+/**
+ * Functional interface representing a narcissistic number check.
+ */
+fun interface NarcissisticNumber {
+    /**
+     * Checks whether the given number is an Armstrong number.
+     *
+     * @param number The number to check.
+     * @return `true` if the number is an Armstrong number, `false` otherwise.
+     */
     fun isArmstrong(number: Int): Boolean
 }
 
-class NarcissisticNumberImpl : NarcissisticNumber {
-
+/**
+ * Implementation of the NarcissisticNumber interface.
+ */
+data object NarcissisticNumberImpl : NarcissisticNumber {
     /**
-     * Function to check whether the number is armstrong number or not.
-     * @param number Number
-     * @return true if the number is armstrong.
-     * @return false if the number is not armstrong.
+     * Checks whether the given number is an Armstrong number.
+     *
+     * @param number The number to check.
+     * @return `true` if the number is an Armstrong number, `false` otherwise.
      */
     override fun isArmstrong(number: Int): Boolean {
         if (number < 0) {
@@ -53,11 +65,17 @@ class NarcissisticNumberImpl : NarcissisticNumber {
         return number == sum
     }
 
+    /**
+     * Calculates the number of digits in the given number.
+     *
+     * @param num The number to calculate the number of digits for.
+     * @return The number of digits in the given number.
+     */
     private fun numberOfDigits(num: Int): Int {
-        var n = num
+        var res = num
         var totalDigits = 0
-        while (n > 0) {
-            n /= DECIMAL
+        while (res > 0) {
+            res /= DECIMAL
             totalDigits++
         }
         return totalDigits
