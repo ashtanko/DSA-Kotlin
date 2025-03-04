@@ -17,7 +17,6 @@ plugins {
     base
     application
     jacoco
-    id("com.github.nbaztec.coveralls-jacoco") version "1.2.20"
     idea
     alias(libs.plugins.kt.jvm)
     alias(libs.plugins.detekt)
@@ -103,7 +102,7 @@ spotless {
             ),
         )
         trimTrailingWhitespace()
-        indentWithSpaces()
+        leadingTabsToSpaces()
         endWithNewline()
         val delimiter = "^(package|object|import|interface|internal|@file|//startfile)"
         val licenseHeaderFile = rootProject.file("spotless/copyright.kt")
