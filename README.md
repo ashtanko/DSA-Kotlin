@@ -14,7 +14,7 @@ A repository that organizes various data structures, algorithms, and solutions t
   <a href="http://kotlinlang.org/"><img alt="Kotlin Version" src="https://img.shields.io/badge/kotlin-2.0.21-blue.svg"/></a>
   <a href="https://app.codacy.com/gh/ashtanko/DSA-Kotlin/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage"><img alt="codacy test coverage" src="https://app.codacy.com/project/badge/Coverage/3eecbb4a701d426eb5d1d2dcbb9d7679"/></a>
   <a href="https://codeclimate.com/github/ashtanko/DSA-Kotlin/maintainability"><img src="https://api.codeclimate.com/v1/badges/60b90295847a33756958/maintainability" /></a>
-  <a href="https://codeclimate.com/github/ashtanko/DSA-Kotlin/test_coverage"><img alt="codeclimate test coverage" src="https://api.codeclimate.com/v1/badges/60b90295847a33756958/test_coverage"/></a>
+  <a href="https://codeclimate.com/github/ashtanko/DSA-Kotlin/test_coverage"><img src="https://api.codeclimate.com/v1/badges/60b90295847a33756958/test_coverage" /></a>
   <a href="https://codecov.io/gh/ashtanko/DSA-Kotlin"><img alt="codecov test coverage" src="https://codecov.io/gh/ashtanko/DSA-Kotlin/graph/badge.svg?token=6vzgrCAl5c"/></a>
 </p><br>
 
