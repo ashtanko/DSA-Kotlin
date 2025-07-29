@@ -30,6 +30,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
+import org.junit.jupiter.params.support.ParameterDeclarations
 import java.util.stream.Stream
 
 abstract class NarcissisticNumberTest<out T : NarcissisticNumber>(private val strategy: T) {
@@ -41,7 +42,10 @@ abstract class NarcissisticNumberTest<out T : NarcissisticNumber>(private val st
     }
 
     private class InputArgumentsProvider : ArgumentsProvider {
-        override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
+        override fun provideArguments(
+            parameters: ParameterDeclarations?,
+            context: ExtensionContext?
+        ): Stream<out Arguments> = Stream.of(
             Arguments.of(370, true),
             Arguments.of(225, false),
             Arguments.of(-23, false),
