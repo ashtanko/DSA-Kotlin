@@ -31,6 +31,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
+import org.junit.jupiter.params.support.ParameterDeclarations
 import java.util.stream.Stream
 
 class GCDTest {
@@ -59,7 +60,10 @@ class GCDTest {
     }
 
     class InputArgumentsProvider : ArgumentsProvider {
-        override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
+        override fun provideArguments(
+            parameters: ParameterDeclarations?,
+            context: ExtensionContext?
+        ): Stream<out Arguments> = Stream.of(
             Arguments.of(54, 24, 6),
             Arguments.of(42, 56, 14),
             Arguments.of(48, 18, 6),

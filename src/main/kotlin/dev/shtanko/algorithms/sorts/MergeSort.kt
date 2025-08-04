@@ -81,7 +81,7 @@ data object MergeSort : Sortable {
      * @param arr The array to sort.
      * @param aux The auxiliary array used for merging.
      * @param low The low index of the current range.
-     * @param mid The mid index of the current range.
+     * @param mid The mid-index of the current range.
      * @param high The high index of the current range.
      * @param T The type of elements in the array, must be comparable.
      */

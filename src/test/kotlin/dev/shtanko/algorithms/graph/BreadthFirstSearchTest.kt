@@ -32,6 +32,7 @@ import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.Arguments.arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
+import org.junit.jupiter.params.support.ParameterDeclarations
 import java.util.stream.Stream
 
 class BreadthFirstSearchTest {
@@ -52,7 +53,10 @@ class BreadthFirstSearchTest {
 
     class InputArgumentsProvider : ArgumentsProvider {
         @Suppress("LongMethod")
-        override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
+        override fun provideArguments(
+            parameters: ParameterDeclarations?,
+            context: ExtensionContext?
+        ): Stream<out Arguments> = Stream.of(
             arguments(
                 "should return empty list for empty",
                 EmptyGraph,

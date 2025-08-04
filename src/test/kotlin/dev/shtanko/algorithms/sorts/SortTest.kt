@@ -32,6 +32,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
+import org.junit.jupiter.params.support.ParameterDeclarations
 import java.util.stream.Stream
 import kotlin.random.Random
 
@@ -80,7 +81,10 @@ abstract class SortTest<out T : Sortable>(private val strategy: T) {
     }
 
     private class InputArrayArgumentsProvider : ArgumentsProvider {
-        override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
+        override fun provideArguments(
+            parameters: ParameterDeclarations?,
+            context: ExtensionContext?
+        ): Stream<out Arguments> = Stream.of(
             Arguments.of(arrayOf<Int>(), emptyArray<Int>()),
             Arguments.of(arrayOf(0), arrayOf(0)),
             Arguments.of(arrayOf(4), arrayOf(4)),
@@ -112,7 +116,10 @@ abstract class SortTest<out T : Sortable>(private val strategy: T) {
     }
 
     private class InputFloatArgumentsProvider : ArgumentsProvider {
-        override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
+        override fun provideArguments(
+            parameters: ParameterDeclarations?,
+            context: ExtensionContext?
+        ): Stream<out Arguments> = Stream.of(
             Arguments.of(arrayOf<Float>(), emptyArray<Float>()),
             Arguments.of(arrayOf(1f), arrayOf(1f)),
             Arguments.of(arrayOf(5.2f, 1.3f, 0.7f, 3.8f, 2.6f), arrayOf(0.7f, 1.3f, 2.6f, 3.8f, 5.2f)),
@@ -121,7 +128,10 @@ abstract class SortTest<out T : Sortable>(private val strategy: T) {
     }
 
     private class InputArgumentsProvider : ArgumentsProvider {
-        override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
+        override fun provideArguments(
+            parameters: ParameterDeclarations?,
+            context: ExtensionContext?
+        ): Stream<out Arguments> = Stream.of(
             Arguments.of(getRandomArray(), true),
             Arguments.of(arrayOf(1, 2, 2, 1), true),
         )
@@ -136,7 +146,10 @@ abstract class SortTest<out T : Sortable>(private val strategy: T) {
     }
 
     private class InputStringArrayArgumentsProvider : ArgumentsProvider {
-        override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
+        override fun provideArguments(
+            parameters: ParameterDeclarations?,
+            context: ExtensionContext?
+        ): Stream<out Arguments> = Stream.of(
             Arguments.of(arrayOf<String>(), emptyArray<String>()),
             Arguments.of(arrayOf("A"), arrayOf("A")),
             Arguments.of(arrayOf("a"), arrayOf("a")),
@@ -158,7 +171,10 @@ abstract class SortTest<out T : Sortable>(private val strategy: T) {
     }
 
     private class InputObjectArrayArgumentsProvider : ArgumentsProvider {
-        override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> = Stream.of(
+        override fun provideArguments(
+            parameters: ParameterDeclarations?,
+            context: ExtensionContext?
+        ): Stream<out Arguments> = Stream.of(
             Arguments.of(
                 arrayOf(
                     TestObject.empty(
