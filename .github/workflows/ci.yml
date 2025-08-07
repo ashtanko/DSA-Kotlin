@@ -89,7 +89,7 @@ jobs:
           files: ./build/reports/jacoco/test/jacocoTestReport.xml
 
       - name: Upload test coverage to qlty
-        uses: qltysh/qlty-action/coverage@v1
+        uses: qltysh/qlty-action/coverage@v2
         with:
           oidc: true
           files: build/reports/jacoco/test/jacocoTestReport.xml
