@@ -25,7 +25,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0  # Shallow clones should be disabled for better analysis relevancy
 
@@ -43,7 +43,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Cache Gradle dependencies
-        uses: actions/cache@v4.2.3
+        uses: actions/cache@v4.2.4
         with:
           path: ${{ env.GRADLE_HOME }}/caches
           key: |
@@ -89,7 +89,7 @@ jobs:
           files: ./build/reports/jacoco/test/jacocoTestReport.xml
 
       - name: Upload test coverage to qlty
-        uses: qltysh/qlty-action/coverage@v1
+        uses: qltysh/qlty-action/coverage@v2
         with:
           oidc: true
           files: build/reports/jacoco/test/jacocoTestReport.xml
