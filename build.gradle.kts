@@ -127,6 +127,9 @@ kover {
 tasks {
     withType<Test> {
         maxParallelForks = 1
+        // Use maxParallelForks > 1 only if your test suite is large and CPU-heavy.
+        // For fast, I/O-bound tests, maxParallelForks = 1 is often fastest.
+        // maxParallelForks = Runtime.getRuntime().availableProcessors()
         jvmArgs(
             "--add-opens",
             "java.base/jdk.internal.misc=ALL-UNNAMED",
