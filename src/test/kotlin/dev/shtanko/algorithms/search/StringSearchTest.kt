@@ -49,8 +49,8 @@ abstract class StringSearchTest<out T : Searchable<String>>(private val strategy
 
     private class InputStringArrayArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(arrayOf<String>(), "A", -1),
             Arguments.of(arrayOf("A"), "A", 0),

@@ -129,8 +129,8 @@ class PerformanceTest {
         private val smallBatch = 800.generateRandomArray()
 
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(BubbleSort, extraExtraSmallBatch),
             Arguments.of(BubbleSort, extraSmallBatch),
@@ -175,8 +175,8 @@ class PerformanceTest {
         private val extraLargeBatch = 500_000.generateRandomArray()
 
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(mergeSortStrategy, smallBatch),
             Arguments.of(mergeSortStrategy, mediumBatch),
@@ -203,8 +203,8 @@ class PerformanceTest {
 
     private class FastScopeStrategiesInputArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(10_000, true),
             Arguments.of(100_000, true),
@@ -215,8 +215,8 @@ class PerformanceTest {
 
     private class SlowScopeStrategiesInputArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(5000, true),
             Arguments.of(1000, true),
