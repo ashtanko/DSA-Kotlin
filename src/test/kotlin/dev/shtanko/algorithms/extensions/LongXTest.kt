@@ -57,8 +57,8 @@ class LongXTest {
 
     class InputArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(
                 4L,
@@ -93,8 +93,8 @@ class LongXTest {
 
     class ToReverseInputArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(
                 1L,
@@ -121,8 +121,8 @@ class LongXTest {
 
     class InputPalindromeArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(
                 0L,

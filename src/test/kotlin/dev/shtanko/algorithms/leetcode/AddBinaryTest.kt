@@ -50,8 +50,8 @@ abstract class AddBinaryTest<out T : AddBinary>(private val strategy: T) {
 
     class InputArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(
                 "",

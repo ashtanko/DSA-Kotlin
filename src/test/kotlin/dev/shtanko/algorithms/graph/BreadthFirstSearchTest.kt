@@ -54,8 +54,8 @@ class BreadthFirstSearchTest {
     class InputArgumentsProvider : ArgumentsProvider {
         @Suppress("LongMethod")
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             arguments(
                 "should return empty list for empty",

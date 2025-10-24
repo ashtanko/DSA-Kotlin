@@ -61,8 +61,8 @@ class GCDTest {
 
     class InputArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(54, 24, 6),
             Arguments.of(42, 56, 14),

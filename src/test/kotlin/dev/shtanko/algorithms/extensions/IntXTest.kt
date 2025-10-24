@@ -76,8 +76,8 @@ class IntXTest {
 
     class InputIsEvenArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(2, true),
             Arguments.of(3, false),
@@ -93,8 +93,8 @@ class IntXTest {
 
     class InputPrimeArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of(
                 0,

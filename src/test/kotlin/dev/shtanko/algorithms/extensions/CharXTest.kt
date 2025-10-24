@@ -55,8 +55,8 @@ class CharXTest {
 
     class InputArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of('a'..'z', 0, 0),
             Arguments.of('a'..'z', 6, 6),
@@ -67,8 +67,8 @@ class CharXTest {
 
     class InputVowelArgumentsProvider : ArgumentsProvider {
         override fun provideArguments(
-            parameters: ParameterDeclarations?,
-            context: ExtensionContext?
+            parameters: ParameterDeclarations,
+            context: ExtensionContext,
         ): Stream<out Arguments> = Stream.of(
             Arguments.of('a', true),
             Arguments.of('e', true),
