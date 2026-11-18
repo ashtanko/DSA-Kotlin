@@ -282,6 +282,7 @@ dependencies {
         junit.apply {
             testImplementation(api)
             testImplementation(params)
+            testRuntimeOnly(engine)
         }
         mockito.apply {
             // testImplementation(mockito) // not under usage for now
